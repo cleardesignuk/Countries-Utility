@@ -305,8 +305,8 @@ const countryList = {
 
 //Nicely organised country array
 const countries = Object.entries(countryList)
-  .map(([code, country]) => ({ code, country }))
-  .sort((a, b) => a.country.localeCompare(b.country));
+  .map(([code, name]) => ({ code, name }))
+  .sort((a, b) => a.name.localeCompare(b.name));
 
 //Common JS exports
 module.exports = {
