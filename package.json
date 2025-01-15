@@ -1,0 +1,25 @@
+{
+    "name": "@cleardesignuk/countries-helper",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": {
+      "name": "Clear",
+      "email": "hello@cleardesign.co.uk",
+      "url": "https://cleardesign.co.uk",
+      "role": "developer"
+    },
+    "homepage": "https://cleardesign.co.uk",
+    "scripts": {
+        "release": "git checkout main && git fetch && git pull && git merge develop --no-edit && standard-version && git push --follow-tags && npm publish && git checkout develop"
+    },
+    "devDependencies": {
+        "standard-version": "^9.5.0"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/cleardesignuk/Countries-Utility.git"
+    },
+    "publishConfig": {
+      "registry": "https://npm.pkg.github.com"
+    }
+  }

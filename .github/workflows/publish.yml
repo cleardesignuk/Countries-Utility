@@ -1,0 +1,26 @@
+name: Publish npm package to Github Packages
+on: 
+  push:
+    tags: 
+      - 'v*' # Only run on tags that start with "v"
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps: 
+      - uses: actions/checkout@v4
+      #Setup .npmrc file to allow publishing to Github packages
+      - uses: actions/setup-node@v4
+        with: 
+          node-version: 'lts/*' #Use the latest LTS release of node
+          registry-url: 'https://npm.pkg.github.com'
+          # Scope to the @cleardesignuk organisation 
+          scope: '@cleardesignuk'
+      - run: npm install # Generates the package-lock.json file for NPM CI.
+      - run: npm ci
+      - run: npm publish
+        env: 
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
