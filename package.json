@@ -1,6 +1,6 @@
 {
   "name": "@cleardesignuk/countries-helper",
-  "version": "1.0.2",
+  "version": "1.0.1",
   "main": "index.js",
   "author": {
     "name": "Clear",
@@ -10,7 +10,7 @@
   },
   "homepage": "https://cleardesign.co.uk",
   "scripts": {
-    "release": "git checkout main && git fetch && git pull --no-edit && standard-version && git push --follow-tags && npm publish && git checkout develop"
+    "release": "git checkout main && git fetch && git pull && standard-version && git push --follow-tags && npm publish && git checkout develop"
   },
   "devDependencies": {
     "standard-version": "^9.5.0"
